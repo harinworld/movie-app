@@ -1,0 +1,32 @@
+.bg {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+}
+.bg .Introbg {
+  width: 100%;
+  height: 100vh;
+  opacity: 0.4;
+}
+.bg .bg-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 45%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  scale: 0.7;
+}
+.bg .bg-btn .Movieintro {
+  margin-bottom: 10rem;
+}
+
+.logo {
+  position: relative;
+  left: 8rem;
+  top: 2rem;
+}/*# sourceMappingURL=Style.css.map */
