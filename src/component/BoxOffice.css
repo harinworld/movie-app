@@ -1,0 +1,29 @@
+.boback{
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  /* position: relative; */
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+.mySwiper{
+    width: 70%;
+    /* position: absolute; */
+}
+.mainSwiper{
+  /* position: absolute; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 774px;
+  left: 0;
+  top: 0;
+}
+.mainswiper{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

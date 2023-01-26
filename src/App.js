@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
 import Intro from './component/Intro'
 import BoxOffice from './component/BoxOffice'
+import MovieDetail from './component/MovieDetail'
 
 function App() {
 //   let today = new Date();
@@ -58,7 +59,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Intro/>}/>
           <Route path="/boxoffice" element={<BoxOffice/>}/>
-          {/* <Route path="/write" element={<Write/>}/> */}
+          <Route path="/moviedetail" element={<MovieDetail/>}/>
         </Routes>
     </BrowserRouter>
     // <div>

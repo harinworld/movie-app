@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
 .bg{
     background-color: #000;
     width: 100%;
@@ -28,4 +44,136 @@
     position: relative;
     left: 8rem;
     top: 2rem;
+    z-index: 6;
+}
+.boxofficesp{
+    width: 15.3125rem;
+    height: 22rem;
+    padding: 2em 0 1em 0;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, rgba(0,0,0,0), rgba(0,0,0,0.3));
+}
+.item:hover .boxofficesp{
+    filter: brightness(0.5);
+}
+.item:hover .hover-swipertxt{
+    opacity: 1;
+}
+.hover-swipertxt{
+    position: absolute;
+    font-size: 1rem;
+    color: #000;
+    top: 11rem;
+    left: 7.65625rem;
+    transform: translate(-45%,-40%);
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+.hover-swipertxt p:nth-of-type(1){
+    background-color: #D9D9D9;
+    padding: 0.4em 1.5em;
+    border-radius: 7px;
+    margin-bottom: 6px;
+}
+.hover-swipertxt p:nth-of-type(2){
+    background-color: #FF8484;
+    padding: 0.4em 1.5em;
+    border-radius: 7px;
+    margin-top: 6px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #fff;
+  opacity: 50%;
+}
+.boback{
+    width: 100%;
+    // height: 100vh;
+    background-color: #000;
+}
+.mainSwiper{
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transform: translateY(-6%);
+}
+.first-swiper::after{
+    content: "";
+    display: block;
+    background-color: rgba(0,0,0);
+    background: linear-gradient(to top, rgb(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,1));
+    transform: translateY(-51.5rem);
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 774px;
+}
+
+.main{
+    width: 100%;
+    height: 774px;
+}
+.mySwiper{
+    width: 70%;
+}
+.boxofficetxt{
+    color: #fff;
+    font-size: 2rem;
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    padding-left: 5em;
+    font-style: oblique;
+}
+.boxofficetxt::after{
+    content: "";
+    position: absolute;
+    border: 0.5px solid rgba(255,255,255,0.5);
+    width: 79%;
+    transform: translate(2rem,1.2rem);
+    box-sizing: border-box;
+}
+.second-swipertxt{
+    color: #fff;
+    text-align: center;
+    font-family: GmarketSansMedium;
+    padding-bottom: 5em;
+    justify-content: center;
+    align-items: center;
+    width: 15.3125rem;
+    h4{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    p{
+        font-size: 1.2rem;
+        justify-content: center;
+    }
+}
+
+
+
+.mdback{
+    width: 100%;
+}
+.detail-main{
+    position: relative;
+    padding: 0 15%;
+    top: 5rem;
+    background-color: lightgrey;
+}
+.movie-txt{
+    font-size: 1.5rem;
+    font-family: GmarketSansMedium;
+    font-weight: 700;
+    font-style: oblique;
+    color: #000;
+}
+.poster{
+    width: 185px;
+    height: 260px;
 }
