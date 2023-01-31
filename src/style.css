@@ -182,21 +182,22 @@
 .background-black {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  height: 100vh;
+  height: 100%;
   z-index: -19;
   left: 0;
   top: 0;
   margin: 0 auto;
   position: absolute;
+  position: fixed;
 }
 
 .mdback {
   position: relative;
   width: 100%;
-  height: 100vh;
 }
 
 .detail-main {
+  font-family: "GmarketSansMedium";
   position: relative;
   padding: 0 15%;
   top: 5rem;
@@ -213,7 +214,7 @@
   content: "";
   position: absolute;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
-  width: 78%;
+  width: 62%;
   transform: translate(2rem, 1rem);
   box-sizing: border-box;
 }
@@ -231,7 +232,7 @@
   margin-top: 3rem;
   display: flex;
   color: #fff;
-  padding: 0 9.5%;
+  padding: 0 0 0 9.5%;
 }
 
 .title {
@@ -278,18 +279,66 @@
   margin-bottom: 3rem;
 }
 
-.text3 {
+.text3 button {
   background-color: #fff;
   color: #000;
   width: 110px;
   text-align: center;
   height: 35px;
-  line-height: 35px;
+  border: none;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .content-txt {
   width: 60%;
   position: relative;
   margin: 2rem 0;
-}/*# sourceMappingURL=Style.css.map */
+}
+
+.detail-input {
+  padding: 0 0 0 9.5%;
+  margin-top: 5rem;
+  padding-bottom: 10rem;
+}
+
+.subtxt {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: GmarketSansMedium;
+  margin-bottom: 2rem;
+}
+
+.write-box {
+  position: relative;
+  background-color: #D9D9D9;
+  padding: 0.8rem 0 0.8rem 0.8rem;
+}
+.write-box input {
+  width: 88%;
+  height: 7rem;
+  margin-right: 1.5%;
+  padding: 1em;
+  border: 1px solid rgb(159, 159, 159);
+  outline: none;
+  font-family: GmarketSansMedium;
+  font-size: 0.8rem;
+}
+.write-box button {
+  font-family: GmarketSansMedium;
+  width: 9%;
+  height: 7rem;
+  border: 1px solid rgb(159, 159, 159);
+}
+
+.message {
+  width: 100%;
+  height: 5rem;
+  background-color: #D9D9D9;
+  border-radius: 15px;
+  margin-top: 2rem;
+  padding: 1.1rem;
+  font-family: GmarketSansMedium;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */

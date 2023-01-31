@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState, useEffect } from "react";
+import React, { useContext  } from 'react'
 import './MovieDetail'
 import './Intro'
 import logo from '../img/BoxOffice/logo.png';
@@ -11,84 +10,82 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectCoverflow, Pagination,Mousewheel, Autoplay } from "swiper";
 import { Navigation } from "swiper";
+import MovieDetail from './MovieDetail';
+import { DetailContext } from './Context';
+import { Link } from 'react-router-dom';
 
 const BoxOffice = () => {
+  // const [detail,setDetail] = useState()
+  // const DetailContext = createContext(null);
+  // const SetDetailContext = createContext(null);
 
-  const KEY = "dcb877c29782034e77c94aac785199a2"
-  const DATE = "20230121"
+  // const KEY = "dcb877c29782034e77c94aac785199a2"
+  // const DATE = "20230127"
   
 
-  const [loading,setLoading] = useState(true);
-  const [rank,setRank] = useState([])
-  const [movies,setMovies] = useState([])
-  const getMovies = async() => {
-    const json = await (
-       await fetch(
-      `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KEY}&targetDt=${DATE}`
-    )
-    ).json();
-    // console.log(json.boxOfficeResult.dailyBoxOfficeList);
-    const jsonArray = json.boxOfficeResult.dailyBoxOfficeList;
+  // const [loading,setLoading] = useState(true);
+  // const [rank,setRank] = useState([])
+  // const [movies,setMovies] = useState([])
+  // const getMovies = async() => {
+  //   const json = await (
+  //      await fetch(
+  //     `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${KEY}&targetDt=${DATE}`
+  //   )
+  //   ).json();
+  //   // console.log(json.boxOfficeResult.dailyBoxOfficeList);
+  //   const jsonArray = json.boxOfficeResult.dailyBoxOfficeList;
     
 
-    let moviesData = [];
-    jsonArray.forEach(async(movie,key)=>{
-      let moveName = movie.movieNm;
-      let json2 = await (
-              await fetch(
-            `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=562TKI1106M3X3248YGA&detail=Y&title=${moveName}`
-          )
-          ).json();
+  //   let moviesData = [];
+  //   jsonArray.forEach(async(movie,key)=>{
+  //     let moveName = movie.movieNm;
+  //     let json2 = await (
+  //             await fetch(
+  //           `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=562TKI1106M3X3248YGA&detail=Y&title=${moveName}`
+  //         )
+  //         ).json();
           
-          let max = 0;
-          json2.Data[0].Result.map((obj)=>{
-            if(Number(obj.modDate) > max)
-              max = Number(obj.modDate);
-            }
-          )
-
-        //   let max = 0;
-        //   json2.Data[0].Result.map((obj)=>{
-        //     if(obj.Codes.Code.CodeNo != '') {
-        //       // 코드끼리비교
-        //       console.log(obj.CodeNo == movie.movieCd);
-        //     } else {
-        //       //영문명 포함되는지 비교
-        //     }
-        // })
-
-          let data = json2.Data[0].Result.filter(obj=>{
-            obj.title = obj.title.replaceAll('!HS','');
-            obj.title = obj.title.replaceAll('!HE','');
-            obj.rank = movie.rank;
-            return Number(obj.modDate) == max
-          })
-          moviesData.push(...data);
+  //         let max = 0;
+  //         json2.Data[0].Result.map((obj)=>{
+  //           // if()
+  //           if(Number(obj.modDate) > max)
+  //             max = Number(obj.modDate);
+  //           }
+  //         )
+          
+  //         let data = json2.Data[0].Result.filter(obj=>{
+  //           obj.title = obj.title.replaceAll('!HS','');
+  //           obj.title = obj.title.replaceAll('!HE','');
+  //           obj.rank = movie.rank;
+  //           return Number(obj.modDate) == max
+  //         })
+  //         moviesData.push(...data);
          
-          if(key == jsonArray.length-1) {
-            setTimeout(()=>{
-              moviesData.sort((a,b)=>{
-                let nA = Number(a.rank), nB = Number(b.rank);
-                if(nA > nB) return 1;
-                if(nA < nB) return -1;
-                return 0;
-              })
-              setMovies(moviesData);
-            },500)
-          }
-        })
+  //         if(key == jsonArray.length-1) {
+  //           setTimeout(()=>{
+  //             moviesData.sort((a,b)=>{
+  //               let nA = Number(a.rank), nB = Number(b.rank);
+  //               if(nA > nB) return 1;
+  //               if(nA < nB) return -1;
+  //               return 0;
+  //             })
+  //             setMovies(moviesData);
+  //           },500)
+  //         }
+  //       })
+  // }
+  // useEffect(() => {
+  //  getMovies();
+  // }, [])
 
-    // setRank(json.boxOfficeResult.dailyBoxOfficeList);
-    
-    // setLoading(false);
-  }
-  useEffect(() => {
-   getMovies();
-  }, [])
 
-  console.log(movies)
+  const {movies} = useContext(DetailContext);
+  // console.log(movies)
+
 
   return (
+    // <SetDetailContext.Provider value={{setDetail}}>
+    // <DetailContext.Provider value={{detail}}>
     <div className='boback'>
         <a href='/'><img className='logo' src={logo} alt='로고이미지'/></a>
 
@@ -161,11 +158,11 @@ const BoxOffice = () => {
             <SwiperSlide key={key}>
               <div className='item'>
                 <div className='item-img'>
-                  <img className='boxofficesp' src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86157/86157_1000.jpg" alt='1' />
+                  <img className='boxofficesp' src={movie.posters.split("|")[0]} alt='1' />
                 </div>
                 <div className='hover-swipertxt'>
-                  <p><a href='./MovieDetail'>상세보기</a></p>
-                  <p><a href='https://www.cgv.co.kr/'>예매하기</a></p>
+                  <p><Link to={`/MovieDetail/${movie.movieSeq}`}>상세보기</Link></p>
+                  <p><Link to='https://www.cgv.co.kr/'>예매하기</Link></p>
                 </div>
               </div>
               <div key={movie.movieCd} className='second-swipertxt'>
@@ -204,7 +201,10 @@ const BoxOffice = () => {
           </div>
       </Swiper>
     </div>
+    // </DetailContext.Provider>
+    // </SetDetailContext.Provider>
   )
 }
+// export const DetailContext = React.createContext(null)
 
 export default BoxOffice
