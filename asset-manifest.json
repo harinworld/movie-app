@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/movie-app/static/css/main.df180d32.css",
+    "main.js": "/movie-app/static/js/main.540df300.js",
+    "static/js/787.7c42db31.chunk.js": "/movie-app/static/js/787.7c42db31.chunk.js",
+    "static/media/Introbg.png": "/movie-app/static/media/Introbg.a239e80bbdd288f168d8.png",
+    "static/media/musical-intro.png": "/movie-app/static/media/musical-intro.973a40148ec2557692fa.png",
+    "static/media/movie-intro.png": "/movie-app/static/media/movie-intro.d303ff4eb88d64bc5662.png",
+    "index.html": "/movie-app/index.html",
+    "main.df180d32.css.map": "/movie-app/static/css/main.df180d32.css.map",
+    "main.540df300.js.map": "/movie-app/static/js/main.540df300.js.map",
+    "787.7c42db31.chunk.js.map": "/movie-app/static/js/787.7c42db31.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df180d32.css",
+    "static/js/main.540df300.js"
+  ]
+}
