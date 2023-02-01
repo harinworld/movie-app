@@ -22,9 +22,10 @@ const MovieDetail = () => {
     return obj.movieSeq == movieSeq;
   })
   console.log("aaa",moviecontent);
+  console.log("bbb",moviecontent[0].actors.actor);
 
-  // let staffs = moviecontent.filter((obj)=>{
-  //   return obj.staffs == staff;
+  // let staffs = movies.filter((obj)=>{
+  //   return obj.moviecontent[0].staffs.staff;
   // })
   // console.log("staff",staffs);
 
@@ -62,11 +63,13 @@ const MovieDetail = () => {
                     </div>
 
                     <div className='text2'>
-                      <p>감독 : 제임스 카메론</p>
-                      <p>
-                        배우 : 조 샐다나, 샘 워싱턴, 시고니 위버, 우나 채플린,<br></br>
-                        지오바니 리비시, 스티븐 랭, 케이트 윈슬렛
-                      </p>
+                      <p>감독 : {moviecontent[0].directors.director[0].directorNm}</p>
+                      <span>배우 : </span>
+                      {moviecontent[0].actors.actor.map((movie,key)=>
+                      <span key={key}>
+                        {moviecontent[0].actors.actor[key].actorNm}
+                      </span>
+                      )}
                     </div>
 
                     <div className='text3'>
