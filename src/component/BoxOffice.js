@@ -140,7 +140,12 @@ const BoxOffice = () => {
         // pagination={{ clickable: true }}
         centeredSlides={true}
         slidesPerView={4}
-        // spaceBetween={250}
+
+        breakpoints={{
+          375:{
+            slidesPerView:2
+          }
+        }}
         coverflowEffect={{
           rotate: 10,
           stretch: 0,

@@ -128,14 +128,14 @@
     padding-left: 5em;
     font-style: oblique;
 }
-.boxofficetxt::after{
-    content: "";
-    position: absolute;
-    border: 0.5px solid rgba(255,255,255,0.5);
-    width: 79%;
-    transform: translate(2rem,1.2rem);
-    box-sizing: border-box;
-}
+// .boxofficetxt::after{
+//     content: "";
+//     position: absolute;
+//     border: 0.5px solid rgba(255,255,255,0.5);
+//     width: 79%;
+//     transform: translate(2rem,1.2rem);
+//     box-sizing: border-box;
+// }
 .second-swipertxt{
     color: #fff;
     text-align: center;
@@ -197,20 +197,26 @@
     
 }
 .movie-txt{
+    width: 100%;
     font-size: 1.7rem;
     font-family: GmarketSansMedium;
     font-weight: 700;
+    display: flex;
     // font-style: oblique;
     color: #fff;
 }
-.movie-txt::after{
-    content: "";
-    position: absolute;
-    border: 0.5px solid rgba(255,255,255,0.5);
-    width: 62%;
-    transform: translate(2rem,1rem);
-    box-sizing: border-box;
+.login-box{
+    margin-left: 50rem;
 }
+
+// .movie-txt::after{
+//     content: "";
+//     position: absolute;
+//     border: 0.5px solid rgba(255,255,255,0.5);
+//     width: 62%;
+//     transform: translate(2rem,1rem);
+//     box-sizing: border-box;
+// }
 .movie-poster{
     width: 40%;
 }
@@ -313,6 +319,9 @@
         width: 9%;
         height: 7rem;
         border: 1px solid rgb(159, 159, 159);
+        &.off{
+            display: none;
+        }
     }
 }
 .message{
@@ -324,4 +333,22 @@
     padding: 1.1rem;
     font-family: GmarketSansMedium;
     font-size: 0.8rem;
+}
+
+
+.login{
+    width: 150px;
+    height: 25px;
+}
+.login2{
+    width: 150px;
+    height: 25px;
+    margin: 0 0.2rem 0 0.2rem;
+}
+.loginButton{
+    width: 50px;
+    height: 24px;
+    border: none;
+    background-color: #fff;
+    color: #000;
 }

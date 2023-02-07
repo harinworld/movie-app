@@ -4,6 +4,7 @@ import { useState, useEffect} from "react";
 import './Intro'
 import logo from '../img/BoxOffice/logo.png';
 import Write from './Write';
+import Login from './Login';
 // import { Context } from './Context';
 import { DetailContext } from './Context';
 
@@ -18,27 +19,44 @@ const MovieDetail = () => {
 
   // let isMovieSeq = false;
 
-  let moviecontent = movies.filter((obj)=>{
-    return obj.movieSeq == movieSeq;
-  })
-  console.log("aaa",moviecontent);
-  console.log("bbb",moviecontent[0].actors.actor);
+  const [moviecontent, setMoviecontent] = useState(null);
 
-  // let staffs = movies.filter((obj)=>{
-  //   return obj.moviecontent[0].staffs.staff;
-  // })
-  // console.log("staff",staffs);
-
+  let Year = null;
+  let Month = null;
+  let Day = null;
   const url = "https://www.cgv.co.kr"
-  let Date = moviecontent[0].repRlsDate;
-  let Year = Date.substr(0, 4);
-  let Month = Date.substr(4, 2);
-  let Day = Date.substr(6, 2);
+  if(moviecontent !== null) {
+    // console.log("aaa",moviecontent);
+    // console.log("bbb",moviecontent[0].actors.actor);
+
+    // let staffs = movies.filter((obj)=>{
+    //   return obj.moviecontent[0].staffs.staff;
+    // })
+    // console.log("staff",staffs);
+
+    let Date = moviecontent[0].repRlsDate;
+
+    Year = Date.substr(0, 4);
+    Month = Date.substr(4, 2);
+    Day = Date.substr(6, 2);
+  }
+
+  useEffect(() => {
+    if(movies !== undefined && movies.length > 0) {
+      setMoviecontent(movies.filter((obj)=>{
+        return obj.movieSeq == movieSeq;
+      }))
+    }
+  }, [movies])
+
+
 
   // if(isMovieSeq) {
     return (
       <div className='mdback'>
         
+        {moviecontent !== null && (
+          <>
           <a href='/'><img className='logo' src={logo} alt='로고이미지'/></a>
           <div className='background-img'>
             <img src={moviecontent[0].posters.split("|")[0]} alt='배경이미지'/>
@@ -46,9 +64,13 @@ const MovieDetail = () => {
           <div className='background-black'></div>
 
           <div className='detail-main'>
-              <div className='movie-txt'>Movie</div>
+              <div className='movie-txt'>Movie
+                <div className='login-box'>
+                <Login/>
+                </div>
+              </div>
+
               <div className='movie-content'>
-                
                   <div className='movie-poster'>
                     <img className='poster' src={moviecontent[0].posters.split("|")[0]} alt='1' />
                   </div>
@@ -65,9 +87,9 @@ const MovieDetail = () => {
                     <div className='text2'>
                       <p>감독 : {moviecontent[0].directors.director[0].directorNm}</p>
                       <span>배우 : </span>
-                      {moviecontent[0].actors.actor.map((movie,key)=>
+                      {moviecontent[0].actors.actor.slice(0, 10).map((movie,key)=>
                       <span key={key}>
-                        {moviecontent[0].actors.actor[key].actorNm}
+                        {movie.actorNm}&nbsp;&nbsp;
                       </span>
                       )}
                     </div>
@@ -80,8 +102,12 @@ const MovieDetail = () => {
               </div>
 
               <Write/>
+              
 
           </div>
+          </>
+        )}
+          
       </div>
     )
   // }

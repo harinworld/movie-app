@@ -5,6 +5,7 @@ import React, {  createContext, useEffect, useState } from 'react'
 const Context = ({children}) => {
 
     // const [detail,setDetail] = useState()
+    const [member, setMember] = useState(false);
     const KEY = "dcb877c29782034e77c94aac785199a2"
     const DATE = "20230112"
     
@@ -23,49 +24,31 @@ const Context = ({children}) => {
       
   
       let moviesData = [];
-      jsonArray.forEach(async(movie,key)=>{
-        let moveName = movie.movieNm;
+      for(let movie of jsonArray) {
+        let movieName = movie.movieNm;
+        const movieOpenDt = movie.openDt.replaceAll('-', '')
         let json2 = await (
                 await fetch(
-              `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=562TKI1106M3X3248YGA&detail=Y&title=${moveName}`
+              `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&ServiceKey=562TKI1106M3X3248YGA&detail=Y&listCount=500&title=${movieName}&releaseDts=${movieOpenDt}`
             )
             ).json();
-            
-            let max = 0;
-            json2.Data[0].Result.map((obj)=>{
-              // if()
-              if(Number(obj.modDate) > max)
-                max = Number(obj.modDate);
-              }
-            )
-            
-            let data = json2.Data[0].Result.filter(obj=>{
-              obj.title = obj.title.replaceAll('!HS','');
-              obj.title = obj.title.replaceAll('!HE','');
-              obj.rank = movie.rank;
-              return Number(obj.modDate) == max
-            })
-            moviesData.push(...data);
-           
-            if(key == jsonArray.length-1) {
-              setTimeout(()=>{
-                moviesData.sort((a,b)=>{
-                  let nA = Number(a.rank), nB = Number(b.rank);
-                  if(nA > nB) return 1;
-                  if(nA < nB) return -1;
-                  return 0;
-                })
-                setMovies(moviesData);
-              },500)
-            }
-          })
+        const obj = json2.Data[0].Result[0]
+        obj.title = obj.title.replaceAll('!HS', '')
+        obj.title = obj.title.replaceAll('!HE', '')
+        obj.rank = movie.rank;
+
+        moviesData.push(obj)
+      }
+
+      setMovies(moviesData)
+
     }
     useEffect(() => {
      getMovies();
     }, [])
 console.log(movies);
   return (
-    <DetailContext.Provider value={{movies}}>
+    <DetailContext.Provider value={{movies,member,setMember}}>
     {children}
     </DetailContext.Provider>
   )

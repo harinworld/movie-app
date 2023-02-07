@@ -34,7 +34,7 @@
   align-items: center;
   left: 45%;
   top: 47%;
-  transform: translate(-50%, -50%);
+  transform: translate(-55%, -50%);
   scale: 0.7;
 }
 .bg .bg-btn .Movieintro {
@@ -167,7 +167,7 @@
   justify-content: center;
 }
 
-.background-img {
+.background-img img {
   width: 100%;
   margin: 0 auto;
   filter: blur(40px);
@@ -239,12 +239,13 @@
   display: flex;
   align-items: center;
   color: #fff;
+  width: 600px;
 }
 
 .title-content1 {
   font-family: GmarketSansMedium;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-right: 15px;
 }
 
@@ -263,8 +264,9 @@
 
 .title2 {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
+  width: 600px;
 }
 
 .title3 {
@@ -293,7 +295,7 @@
 .content-txt {
   width: 60%;
   position: relative;
-  margin: 2rem 0;
+  margin: 2.5rem 0 2rem 0;
 }
 
 .detail-input {
@@ -331,6 +333,9 @@
   height: 7rem;
   border: 1px solid rgb(159, 159, 159);
 }
+.write-box button.off {
+  display: none;
+}
 
 .message {
   width: 100%;
@@ -341,4 +346,12 @@
   padding: 1.1rem;
   font-family: GmarketSansMedium;
   font-size: 0.8rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.loginButton {
+  width: 50px;
+  height: 20px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+}/*# sourceMappingURL=Style.css.map */
