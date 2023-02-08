@@ -1,7 +1,7 @@
 import React, { useContext  } from 'react'
 import './MovieDetail'
 import './Intro'
-import logo from '../img/BoxOffice/logo.png';
+import logo from '../../img/BoxOffice/logo.png';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -143,7 +143,7 @@ const BoxOffice = () => {
         slidesPerView={4}
 
         breakpoints={{
-          1200:{
+          1200: {
             slidesPerView:4
           },
           375:{
