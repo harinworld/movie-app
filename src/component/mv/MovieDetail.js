@@ -2,7 +2,7 @@ import React, { useContext} from 'react'
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect} from "react";
 import './Intro'
-import logo from '../img/BoxOffice/logo.png';
+import logo from '../../img/BoxOffice/logo.png';
 import Write from './Write';
 import Login from './Login';
 // import { Context } from './Context';
