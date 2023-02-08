@@ -12,10 +12,10 @@ const Write = () => {
         setTodoList([...todoList,inputValue]);
     }
 
-    // useEffect(() => {
-    //   console.log(typeof member);
-    //   console.log(isLogined);
-    // }, [member])
+    useEffect(() => {
+      console.log(typeof member);
+      console.log(isLogined);
+    }, [member])
 
    return (
      <div className='detail-input'>

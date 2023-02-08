@@ -8,10 +8,18 @@ import Musicalintro from '../img/Intro/musical-intro.png';
 const Intro = () => {
   return (
     <div className='bg'>
+      <div className='banner'>
+        <div className='banner-text'>MOVIE MUSICAL</div>
+        <div className='banner-text'>MOVIE MUSICAL</div>
+        <div className='banner-text'>MOVIE MUSICAL</div>
+        <div className='banner-text'>MOVIE MUSICAL</div>
+      </div>
         <img className='Introbg' src={Introbg}/>
         <div className='bg-btn'>
-        <Link to="/BoxOffice"><img className='Movieintro' src={Movieintro}/></Link>
-            <img src={Musicalintro}/>
+          <Link to="/BoxOffice">
+            <img className='Movieintro' src={Movieintro}/>
+          </Link>
+            <img className='Musicalintro' src={Musicalintro}/>
         </div>
     </div>
   )

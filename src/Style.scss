@@ -18,6 +18,9 @@
     background-color: #000;
     width: 100%;
     height: 100vh;
+    .banner{
+        display: none;
+    }
     .Introbg{
         width: 100%;
         height: 100vh;
@@ -206,7 +209,7 @@
     color: #fff;
 }
 .login-box{
-    margin-left: 50rem;
+    margin-left: 39rem;
 }
 
 // .movie-txt::after{

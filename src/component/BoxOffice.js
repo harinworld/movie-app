@@ -97,35 +97,36 @@ const BoxOffice = () => {
             loop={true}
             autoplay={{ delay: 2000 }}
             className="mainSwiper">
+              
             <SwiperSlide>
               <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86072/86072210859_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86072/86072210856_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86720/86720210682_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86072/86072210854_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83203/83203210967_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86729/86729211579_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86689/86689211173_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86729/86729211578_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86676/86676211020_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86729/86729211577_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86503/86503208178_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86729/86729211576_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86728/86728211036_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86729/86729211581_727.png" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86481/86481210721_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86157/86157211607_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86489/86489210937_727.jpg" alt='1' />
             </SwiperSlide>
             <SwiperSlide>
-              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86157/86157211428_727.jpg" alt='1' />
+              <img className='main' src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86670/86670210349_727.jpg" alt='1' />
             </SwiperSlide>
           </Swiper>
         </div>
@@ -142,6 +143,9 @@ const BoxOffice = () => {
         slidesPerView={4}
 
         breakpoints={{
+          1200:{
+            slidesPerView:4
+          },
           375:{
             slidesPerView:2
           }
