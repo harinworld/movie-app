@@ -46,7 +46,7 @@ const Context = ({children}) => {
     useEffect(() => {
      getMovies();
     }, [])
-console.log(movies);
+// console.log(movies);
   return (
     <DetailContext.Provider value={{movies,member,setMember}}>
     {children}
