@@ -91,7 +91,7 @@ if(!info) return (<Loading/>)
       <div className='background-black'></div>
         <div className='mv-wrap'>
           <div className='movie-txt'>
-            <span>Movie</span>
+            <span>Musical</span>
             <div className='login-box'>
               <Login/>
             </div>
