@@ -3,13 +3,14 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 const xml2json = require('node-xml2json');
+const apikey = process.env.REACT_APP_KOIPS_API;
 
 const _date = new Date();
 const today = '' + _date.getFullYear() + ( ((_date.getMonth()+1)<=9) ? "0"+(_date.getMonth()+1) : (_date.getMonth()+1) ) + _date.getDate();
 
 // 공연목록 - 뮤지컬
 const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
-+ '?service=3e0f7775aa2a40238ae5d390ad13362c'
++ '?service=' + apikey
 // + '&stdate=20230101'
 // + '&eddate=20230228'
 + '&cpage=1'
@@ -33,7 +34,7 @@ router.get('/mu_api', (req, res) => {
 
 // 공연목록 - 연극
 const t_url2 = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
-+ '?service=3e0f7775aa2a40238ae5d390ad13362c'
++ '?service=' + apikey
 // + '&stdate=20230101'
 // + '&eddate=20230228'
 + '&cpage=1'
@@ -57,7 +58,7 @@ router.get('/theater_api', (req, res) => {
 
 // 예매상황판 - 연극
 const t_url3 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
-+ '?service=3e0f7775aa2a40238ae5d390ad13362c'
++ '?service=' + apikey
 + '&ststype=week'   // 주별, 월별, 일별 가능 (month/week/day)
 + '&date=' + today
 + '&catecode=AAAA' // 장르코드 연극
@@ -80,7 +81,7 @@ router.get('/get_rank_th', (req, res) => {
 
 // 예매상황판 - 뮤지컬
 const t_url4 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
-+ '?service=3e0f7775aa2a40238ae5d390ad13362c'
++ '?service=' + apikey
 + '&ststype=week'   // 주별, 월별, 일별 가능 (month/week/day)
 + '&date=' + today
 + '&catecode=GGGA' // 장르코드 뮤지컬
@@ -115,7 +116,7 @@ router.get('/thmu_info', (req, res) => {
     // + url4에서 받아온 공연코드 mt20id
     // + 'PF200830' // 물랑
     + id
-    + '?service=3e0f7775aa2a40238ae5d390ad13362c'
+    + '?service=' + apikey
     const url5 = encodeURI(t_url5);
     console.log(t_url5);
 
