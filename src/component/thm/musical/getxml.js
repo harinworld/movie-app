@@ -113,7 +113,7 @@ router.get('/thmu_info', (req, res) => {
     + id
     + '?service=' + apikey
     const url5 = encodeURI(t_url5);
-
+    console.log(url5);
     request(
         {
             url: url5,
