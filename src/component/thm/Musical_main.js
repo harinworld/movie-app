@@ -19,7 +19,7 @@ import Loading from './Loading';
 const xml2json = require('node-xml2json');
 
 const Musical_main = () => {
-  const [isPending, startTransition] = useTransition();
+const [isPending, startTransition] = useTransition();
 const [isLoading, setLoading] = useState(true);
 
   //로컬용
@@ -38,7 +38,7 @@ const [isLoading, setLoading] = useState(true);
   var [_data, setData] = useState();
   var [_rankth, setThRank] = useState();
   var [_rankmu, setMuRank] = useState();
-  // const DataContext = createContext(_data);
+
 
   // 뮤지컬 목록
   useEffect(()=>{
@@ -48,6 +48,7 @@ const [isLoading, setLoading] = useState(true);
           startTransition(async()=>{
             var _json = await xml2json.parser(res.data);
             setData(_json.dbs.db);
+            console.log(_data);
           });
         })
     }
@@ -86,12 +87,12 @@ const [isLoading, setLoading] = useState(true);
     getData();
   },[])
 
-// console.log("_json", _data);
+console.log("_json", _data);
 {/* <MusicalContent data={content} index={idx} /> */}
   function setContent() {
     return _data&&_data.map((content, idx) => (
       <SwiperSlide key={idx} className="mySwiper-mv-slide">
-        <div className='swiper-cover .hover-swipertxt'>
+        <div className='swiper-cover'>
           <p><Link to={'/thmuInfo'} state={
               {
                 index : content.mt20id,
@@ -99,7 +100,7 @@ const [isLoading, setLoading] = useState(true);
                 data: `${JSON.stringify(_data)}`
               }
             }>상세보기</Link></p>
-          <p>예매하기</p>
+          <p onClick={()=>window.open(`https://tickets.interpark.com/search?keyword=${_data[idx].prfnm}`)}>예매하기</p>
         </div>
         <img src={content.poster} alt={idx}></img>
         <p>{content.prfnm}</p>
@@ -137,23 +138,25 @@ const [isLoading, setLoading] = useState(true);
       <a href='/'><img className='logo' src={logo} alt='로고이미지'/></a>
     </div>
     <ul className='select-th-mv'>
-      <li><button className="thbtn" onClick={()=> {
+      <li><button className="thbtn selected" onClick={()=> {
         // setRankContent('th');
         $('.first-swiper').removeClass('hidden')
         $('.mu-rank-swiper').addClass('hidden')
-        $('.top-text').text('주간 연극 랭킹 TOP 20');
+        $('.mubtn').removeClass('selected');
+        $('.thbtn').addClass('selected');
         }}>연극</button></li>
       <li><button className="mubtn" onClick={()=> {
         // setRankContent('mu');
         $('.mu-rank-swiper').removeClass('hidden')
         $('.first-swiper').addClass('hidden')
-        $('.top-text').html('주간 뮤지컬 랭킹 TOP 20');
+        $('.thbtn').removeClass('selected');
+        $('.mubtn').addClass('selected');
         }
       }>뮤지컬</button></li>
     </ul>
     {/* {isPending ? 'Loading.....' : null} */}
     <div className='mv-content-list'>
-      <span className='top-text boxofficetxt'>주간 연극 랭킹 TOP 20</span>
+      <span className='mid-text boxofficetxt'>Weekly Ranking</span>
       {isLoading ? <Loading/>:null}
       <div className='first-swiper all_swipertxt'>
           {/* <Swiper
@@ -245,7 +248,7 @@ const [isLoading, setLoading] = useState(true);
             // mousewheel={true}  
             loop={true} 
             // autoplay={{ delay: 2500 }}  
-            slidesPerView={4}
+            slidesPerView={5}
             className="mainSwiper"
         >
             {

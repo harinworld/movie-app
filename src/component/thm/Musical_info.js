@@ -6,6 +6,7 @@ import '../../css/musical.scss'
 import logo from '../../img/BoxOffice/logo.png';
 import Loading from './Loading';
 import Write from '../mv/Write';
+import Login from '../mv/Login';
 const xml2json = require('node-xml2json');
 
 const Musical_info = () => {
@@ -84,21 +85,30 @@ if(!info) return (<Loading/>)
       <div className='mv-logo'>
         <a href='/'><img className='logo' src={logo} alt='로고이미지'/></a>
       </div>
+      <div className='background-img'>
+        <img src={info.poster} alt='배경이미지'/>
+      </div>
+      <div className='background-black'></div>
         <div className='mv-wrap'>
+          <div className='movie-txt'>
+            <span>Movie</span>
+            <div className='login-box'>
+              <Login/>
+            </div>
+          </div>
           <div className='mv-wrap-top'>
             <span className='mv-wrap-img'>
               <img src={info.poster} alt='뮤지컬포스터'></img>
             </span>
             <div className='mv-context'>
                 <h1>{info.prfnm}</h1>
-                <h2>{info.prfage}<br/>러닝타임 {info.prfruntime}</h2>
-                <p>{ifEmpty(info.prfcrew) ? "":'감독'+info.prfcrew}</p>
-                <p>{ifEmpty(info.prfcast) ? "":'출연진'+info.prfcast}</p>
-                <p>{info.genrenm}</p>
-                <p>장소 {info.fcltynm}</p>
-                <p>{info.prfpdfrom} ~ {info.prfpdto}</p>
+                <h2>{info.genrenm} | {info.prfage}<br/>러닝타임 {info.prfruntime}</h2>
+                <h2>{info.prfpdfrom} ~ {info.prfpdto}</h2>
+                <p>{ifEmpty(info.prfcrew) ? "":'감독 | '+info.prfcrew}</p>
+                <p>{ifEmpty(info.prfcast) ? "":'출연진 | '+info.prfcast}</p>
+                <p>장소 | {info.fcltynm}</p>
                 <p>{info.dtguidance}</p>
-                <button>예매하기</button>
+                <button type='button' onClick={()=>window.open(`https://tickets.interpark.com/search?keyword=${info.prfnm}`)}>예매하기</button>
             </div>
           </div>
           <div className='mv-review'>

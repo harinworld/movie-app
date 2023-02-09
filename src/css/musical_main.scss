@@ -12,34 +12,46 @@ body {
         top: 2rem;
     }
 }
+
 .select-th-mv {
     padding: 3rem;
     padding-bottom: 0;
+    position: absolute;
     display: flex;
     text-align: center;
-    justify-content: center;
-    border-bottom: 1px solid #000;
+    justify-content: end;
+    margin-right: 10%;
+    top: 10%;
+    right: 0;
+    z-index: 10;
     li {
         padding: 1rem;
         padding-bottom: 0;
-        z-index: 5;
         button {
-            height: 50px;
-            border-bottom: 2px solid #000;
+            text-align: center;
+            height: 35px;
+            background-color: rgba($color: #d9d9d9, $alpha: 0.3);
+            color: #fff;
             padding: 0 2rem;
-            border-radius: 10px 10px 0 0;
+            cursor: pointer;
+            width: 110px;
+            border: none;
+            border-radius: 30px;
             cursor: pointer;
             &:hover {
-                background-color: #333;
-                border-bottom: 2px solid #aaa;
-                color: #fff;
+                background-color: #fff;
+                color: #000;
             }
+        }
+        button.selected {
+            background-color: #fff;
+            color: #000;
         }
     }
 }
 
 .mv-content-list {
-    // margin-top: 8rem;
+    margin-top: 8rem;
     display: flex;
     flex-direction: column;
     padding-bottom: 3rem;
@@ -123,13 +135,14 @@ body {
         display: flex;
         align-items: flex-start;
         margin: 2rem 0 2rem 10%;
+        z-index: 6;
     }
     .second-swiper-mv {
         height: 300px;
-        padding-bottom: 10%;
+        margin-bottom: 10%;
         padding-top: 5%;
         .mainSwiper {
-            height: 500px;
+            height: 700px;
             margin: 0 10%;
             width: auto;
             .mySwiper-mv-slide {
@@ -143,11 +156,17 @@ body {
                     align-items: center;
                     flex-direction: column;
                     background-color: rgba($color: #333, $alpha: 0);
-                    width: 15.3125rem;
+                    width: 100%;
                     height: 22rem;
-                    transform: translateX(4.25rem);
+                    &:hover {
+                        background-color: rgba($color: #333, $alpha: 0.7);    
+                        p {
+                            opacity: 1;
+                          }
+                    }
                     p {
                         opacity: 0;
+                        cursor: pointer;
                       &:nth-child(1)   {
                         background-color: #D9D9D9;
                         padding: 0.4em 1.5em;
@@ -160,12 +179,6 @@ body {
                         border-radius: 7px;
                         margin-top: 6px;
                       }
-                    }
-                    &:hover {
-                        background-color: rgba($color: #333, $alpha: 0.7);    
-                        p {
-                            opacity: 1;
-                          }
                     }
                 }
             }
