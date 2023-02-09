@@ -25,7 +25,7 @@ body {
     right: 0;
     z-index: 10;
     li {
-        padding: 1rem;
+        padding: 1rem 0.3rem;
         padding-bottom: 0;
         button {
             text-align: center;
@@ -77,6 +77,8 @@ body {
             .mySwiper-mv-slide {
                 width: 15.3125rem;
                 height: 22rem;
+                object-fit: cover;
+                margin-bottom: 0.8rem;
                 img {
                     width: 15.3125rem;
                     height: 22rem;
@@ -134,15 +136,15 @@ body {
         font-size: 2rem;
         display: flex;
         align-items: flex-start;
-        margin: 2rem 0 2rem 10%;
+        margin: 2rem 0 2rem 3%;
         z-index: 6;
     }
     .second-swiper-mv {
-        height: 300px;
-        margin-bottom: 10%;
+        height: auto;
+        margin-bottom: 3%;
         padding-top: 5%;
         .mainSwiper {
-            height: 700px;
+            height: 500px;
             margin: 0 10%;
             width: auto;
             .mySwiper-mv-slide {
