@@ -132,7 +132,7 @@ const BoxOffice = () => {
         </div>
 
         <div className='boxofficetxt'>
-            Box Office
+            Box Officee
         </div>
 
         <Swiper
