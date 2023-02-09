@@ -18,7 +18,6 @@ const t_url = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
 + '&prfstate=02' // 공연중
 + '&shcate=GGGA'// 장르코드: 뮤지컬
 const url = encodeURI(t_url);
-console.log(url);
 
 router.get('/mu_api', (req, res) => {
     request(
@@ -42,7 +41,6 @@ const t_url2 = 'http://www.kopis.or.kr/openApi/restful/pblprfr'
 + '&prfstate=02'
 + '&shcate=AAAA'// 장르코드: 연극
 const url2 = encodeURI(t_url2);
-console.log(url2);
 
 router.get('/theater_api', (req, res) => {
     request(
@@ -64,7 +62,6 @@ const t_url3 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 + '&catecode=AAAA' // 장르코드 연극
 // + '&area=11' //서울
 const url3 = encodeURI(t_url3);
-console.log(url3);
 
 
 router.get('/get_rank_th', (req, res) => {
@@ -88,7 +85,6 @@ const t_url4 = 'http://www.kopis.or.kr/openApi/restful/boxoffice'
 // + '&area=11' //서울
 const url4 = encodeURI(t_url4);
 console.log(url4);
-
 router.get('/get_rank_mu', (req, res) => {
     request(
         {
@@ -110,7 +106,6 @@ router.get('/get_rank_mu', (req, res) => {
 router.get('/thmu_info', (req, res) => {
     // let {id} = req.params.id;
     let {id} = req.query;
-    console.log(id)
     // 공연 관련 세부정보
     const t_url5 = 'http://www.kopis.or.kr/openApi/restful/pblprfr/'
     // + url4에서 받아온 공연코드 mt20id
@@ -118,8 +113,7 @@ router.get('/thmu_info', (req, res) => {
     + id
     + '?service=' + apikey
     const url5 = encodeURI(t_url5);
-    console.log(t_url5);
-
+    console.log(url5);
     request(
         {
             url: url5,

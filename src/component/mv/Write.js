@@ -13,8 +13,8 @@ const Write = () => {
     }
 
     useEffect(() => {
-      console.log(typeof member);
-      console.log(isLogined);
+      // console.log(typeof member);
+      // console.log(isLogined);
     }, [member])
 
    return (

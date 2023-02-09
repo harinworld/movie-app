@@ -31,9 +31,6 @@ const [isLoading, setLoading] = useState(true);
   var apiurl = _cloudsv_url + 'mu_api';
   var rankth_apiurl = _cloudsv_url + 'get_rank_th';
   var rankmu_apiurl = _cloudsv_url + 'get_rank_mu';
-  // console.log(apiurl);
-  // console.log(rankth_apiurl);
-  // console.log(rankmu_apiurl);
 
   var [_data, setData] = useState();
   var [_rankth, setThRank] = useState();
@@ -48,7 +45,6 @@ const [isLoading, setLoading] = useState(true);
           startTransition(async()=>{
             var _json = await xml2json.parser(res.data);
             setData(_json.dbs.db);
-            console.log(_data);
           });
         })
     }
@@ -63,7 +59,6 @@ const [isLoading, setLoading] = useState(true);
         .then(res => {
            startTransition(async()=>{
             var _json = await xml2json.parser(res.data);
-            console.log('연극랭킹', _json);
             setThRank(_json.boxofs.boxof);
           });
           setLoading(false)
@@ -79,7 +74,6 @@ const [isLoading, setLoading] = useState(true);
         .then(res => { 
             startTransition(async()=>{
             var _json = await xml2json.parser(res.data);
-            console.log('뮤랭킹', _json);
             setMuRank(_json.boxofs.boxof);
           });
         })
@@ -87,7 +81,6 @@ const [isLoading, setLoading] = useState(true);
     getData();
   },[])
 
-console.log("_json", _data);
 {/* <MusicalContent data={content} index={idx} /> */}
   function setContent() {
     return _data&&_data.map((content, idx) => (
@@ -184,6 +177,20 @@ console.log("_json", _data);
           mousewheel={true}
           modules={[EffectCoverflow, Pagination, Mousewheel]}
           className="mySwiper-th-rank"
+          breakpoints={{
+            415: {
+              slidesPerView: 1
+            },
+            819: {
+              slidesPerView: 2
+            },
+            1024: {
+              slidesPerView: 3
+            },
+            1300: {
+              slidesPerView: 4
+            }          
+          }}
         >
             {
               // setRankContent('th')
@@ -219,6 +226,20 @@ console.log("_json", _data);
           mousewheel={true}
           modules={[EffectCoverflow, Pagination, Mousewheel]}
           className="mySwiper-mu-rank"
+          breakpoints={{
+            375: {
+              slidesPerView: 1
+            },
+            819: {
+              slidesPerView: 2
+            },
+            1024: {
+              slidesPerView: 3
+            },
+            1400: {
+              slidesPerView: 4
+            }              
+          }}
         >
             {
               // setRankContent('mu')
@@ -247,9 +268,23 @@ console.log("_json", _data);
             modules={[Navigation,Autoplay]}
             // mousewheel={true}  
             loop={true} 
-            // autoplay={{ delay: 2500 }}  
+            autoplay={{ delay: 2500 }} 
             slidesPerView={5}
             className="mainSwiper"
+            breakpoints={{
+              375: {
+                slidesPerView: 1
+              },
+              819: {
+                slidesPerView: 2
+              },
+              1024: {
+                slidesPerView: 3
+              },
+              1400: {
+                slidesPerView: 4
+              }              
+            }}
         >
             {
               setContent()
