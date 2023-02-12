@@ -80,6 +80,7 @@ const BoxOffice = () => {
 
 
   const {movies} = useContext(DetailContext);
+  const url = "https://www.cgv.co.kr"
   // console.log(movies)
 
 
@@ -132,7 +133,7 @@ const BoxOffice = () => {
         </div>
 
         <div className='boxofficetxt'>
-            Box Officee
+            Box Office
         </div>
 
         <Swiper
@@ -171,7 +172,7 @@ const BoxOffice = () => {
                 </div>
                 <div className='hover-swipertxt'>
                   <p><Link to={`/MovieDetail/${movie.movieSeq}`}>상세보기</Link></p>
-                  <p><Link to='https://www.cgv.co.kr/'>예매하기</Link></p>
+                  <p onClick={()=>{window.open(url)}}>예매하기</p>
                 </div>
               </div>
               <div key={movie.movieCd} className='second-swipertxt'>

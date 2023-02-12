@@ -14,7 +14,6 @@ const Musical_info = () => {
   const [isLoading, setLoading] = useState(true);
   
   const location = useLocation();
-  console.log('location', location)
   const mt20id = location.state.index;// 공연 조회용 id
   const idx = location.state.id;
   const _data = location.state.data;
@@ -22,7 +21,6 @@ const Musical_info = () => {
   const _cloudsv_url = 'https://port-0-kopis-api-1b5xkk2fldl11gxs.gksl2.cloudtype.app/'
   var apiurl = _cloudsv_url + 'thmu_info';
   // var apiurl = 'http://localhost:5000/thmu_info';
-  console.log('apiurl', apiurl)
 
   const [info, setInfo] = useState();
 
@@ -35,9 +33,7 @@ const Musical_info = () => {
       })
         .then(res => {
           startTransition(async()=>{
-            console.log('res', res)
             var _json = await xml2json.parser(res.data);
-            console.log("_json", _json);
             setInfo(_json.dbs.db);
           });
           setLoading(false)
@@ -65,8 +61,6 @@ const Musical_info = () => {
   //   getInfoData();
   // },[])
 
-  console.log("info", info);
-
 function ifEmpty(obj) {
   if(obj.constructor !== Object) {
     return false;
@@ -91,7 +85,7 @@ if(!info) return (<Loading/>)
       <div className='background-black'></div>
         <div className='mv-wrap'>
           <div className='movie-txt'>
-            <span>Musical</span>
+            <span>Movie</span>
             <div className='login-box'>
               <Login/>
             </div>

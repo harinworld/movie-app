@@ -57,7 +57,6 @@ body {
     padding-bottom: 3rem;
     .first-swiper {
         width: 70%;
-        height: auto;
         margin: 2rem auto;
         &::after {
             content: "";
@@ -143,6 +142,7 @@ body {
         height: auto;
         margin-bottom: 3%;
         padding-top: 5%;
+        z-index: 5;
         .mainSwiper {
             height: 500px;
             margin: 0 10%;
@@ -208,3 +208,46 @@ body {
         }
     }
 }
+
+@media (max-width: 860px) {
+    .select-th-mv {
+        padding: 3rem;
+        padding-bottom: 0;
+        position: absolute;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-right: 10%;
+        top: 3%;
+        right: 0;
+        z-index: 10;
+        transform: translateX(10%);
+    }
+    .mid-text {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0 2rem 3%;
+        z-index: 6;
+        transform: translateX(-10%);
+    }
+}
+
+@media (min-width: 416px) and (max-width: 818px) {
+    .mv-logo {
+        img {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+        }
+    }
+    .mv-content-list {
+        .mid-text {
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            z-index: 6;
+        }
+    }
+}   
