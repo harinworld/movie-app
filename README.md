@@ -1,70 +1,87 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 포트폴리오 페이지
 
-## Available Scripts
+![Group 2099](https://user-images.githubusercontent.com/118143036/232437994-88338f27-68a9-4af5-acd5-f72db3283502.png)
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+## 🌱 프로젝트소개
+해당 프로젝트는 팀프로젝트로 진행되었으며, React에서 api를 호출하여 영화 순위를 보여준 프로젝트입니다.
+React, scss로 제작되었고, 제가 맡은 부분은 전체적인 디자인과 Movie페이지 부분입니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ☘️ 주요기능
 
-### `npm test`
+#### 영화순위
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 영화상세정보 api와 영화순위 api를 사용해 영화 순위를 나타냈다.
 
-### `npm run build`
+#### 관람후기 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 지정된 아이디와 비밀번호를 사용해 관람후기를 등록할 수 있게 만들었다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔨 기술스택
 
-### `npm run eject`
+### **Tech**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white">
+<img src="https://img.shields.io/badge/reactrouter-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white">
+<img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+<br>
+</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Design**
+<p>
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>
+<img src="https://img.shields.io/badge/adobeillustrator-FF9A00?style=for-the-badge&logo=adobeillustrator&logoColor=white"/>
+<img src="https://img.shields.io/badge/adobephotoshop-31A8FF?style=for-the-badge&logo=adobephotoshop&logoColor=white"/>
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### **Tools**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p>
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=Git&logoColor=white"/>
+<img src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white">
+<img src="https://img.shields.io/badge/filezilla-BF0000?style=for-the-badge&logo=filezilla&logoColor=white">
+<br>
+</p>
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br/>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔥 Trouble shooting
+<details>
+<summary><strong> issue1: 영화 페이지 api호출 </strong></summary>
 
-### Code Splitting
+두가지의 api를 호출하면서 중복되는 데이터를 찾기까지 시행착오가 있었지만 영화 제목을 sort하여 박스오피스를 출력하였다.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<details>
+<summary><strong> issue2: 뮤지컬 페이지 api호출 </strong></summary>
 
-### Analyzing the Bundle Size
+api 데이터가 너무 많아 출력되기까지 상당히 오랜 시간이 걸려 loading 이미지를 넣었다.
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<details>
+<summary><strong> issue3: 영화페이지 포스터 출력 </strong></summary>
 
-### Making a Progressive Web App
+api의 데이터를 바인딩해 출력한 다른 항목들처럼 포스터도 출력을 했었다. 하지만 포스터 항목은 사진 한장이 아닌
+여러 이미지들이 연결되어있었다. 따라서 slice를 사용해 처음 이미지 주소만을 포스터로 출력했다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+</details>
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br></br>
+## 🌸 와이어프레임
 
-### `npm run build` fails to minify
+[💾 와이어프레임](https://www.figma.com/file/xSrVMeZKVCGsha3bzQsGF6/movie-musical?t=OWxr5AN3EnvTL7op-0)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br></br>
